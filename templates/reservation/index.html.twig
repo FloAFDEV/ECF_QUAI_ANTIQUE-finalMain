@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation
+{% endblock %}
+
+{% block body %}
+	<section style="background: #232526">
+		<div class="container py-5 mt-3">
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-5 text-center">
+					<h1 class="text-white mb-5">
+						<span class="text-warning">Réserver</span>
+						votre table
+					</h1>
+					{{ form_start(form) }}
+					<div class="form-group mb-3">
+						{{ form_label(form.email, null, {'label_attr': {'class': 'text-warning'}}) }}
+						{{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre e-mail'}}) }}
+						{{ form_errors(form.email) }}
+					</div>
+					<div class="form-group mb-3">
+						{{ form_label(form.persons, null, {'label_attr': {'class': 'text-warning'}}) }}
+						{{ form_widget(form.persons, {'attr': {'class': 'form-control', 'placeholder': 'Nombre de personnes'}}) }}
+						{{ form_errors(form.persons) }}
+					</div>
+					<div class="form-group mb-3">
+						{{ form_label(form.date, null, {'label_attr': {'class': 'text-warning'}}) }}
+						{{ form_widget(form.date, {'attr': {'class': 'form-control', 'placeholder': 'Date de réservation'}}) }}
+						{{ form_errors(form.date) }}
+					</div>
+					<div class="form-group mb-3">
+						{{ form_label(form.hour, null, {'label_attr': {'class': 'text-warning'}}) }}
+						{{ form_widget(form.hour, {'attr': {'class': 'form-control', 'placeholder': 'Heure de réservation'}}) }}
+						{{ form_errors(form.hour) }}
+					</div>
+					<div class="form-group mb-5">
+						{{ form_label(form.allergy, null, {'label_attr': {'class': 'text-warning'}}) }}
+						{{ form_widget(form.allergy, {'attr': {'class': 'form-control', 'placeholder': 'Allergies ou autres'}}) }}
+						{{ form_errors(form.allergy) }}
+					</div>
+					<button class="btn btn-lg btn-info mt-3" type="submit">Je réserve</button>
+					{{ form_end(form) }}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

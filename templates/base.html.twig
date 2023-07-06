@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Restaurant Quai Antique
+			{% endblock %}
+		</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+		<meta name="robots" content="index, follow">
+		<meta name="description" content="restaurant Quai Antique">
+		<meta name="keywords" content="restaurant, gastronomie, quai-antique, Chambery">
+		<meta
+		http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- Favicons -->
+		<link href="{{ asset('asset/img/favicon.png') }}" rel="icon">
+		<link
+		href="{{ asset('asset/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+		<!-- Google Fonts -->
+		<link
+		href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+
+		<!-- Vendor CSS Files -->
+		<link href="{{ asset('asset/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+		<link href="{{ asset('asset/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+		<link href="{{ asset('asset/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+		<link href="{{ asset('asset/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+		<link href="{{ asset('asset/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+		<link
+		href="{{ asset('asset/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+		<!-- Main CSS -->
+		<link href="{{ asset('asset/css/style.css') }}" rel="stylesheet"> {% block stylesheets %}{% endblock %}{% block javascripts %}{% endblock %}
+		</head>
+		<body>
+			{% include 'shared/_header.html.twig' %}
+			{% block body %}{% endblock %}
+			{% include 'shared/_footer.html.twig' %}
+			<script src="{{ asset('asset/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+			<script src="{{ asset('asset/vendor/glightbox/js/glightbox.min.js') }}"></script>
+			<script src="{{ asset('asset/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+			<script src="{{ asset('asset/vendor/swiper/swiper-bundle.min.js') }}"></script>
+			<script src="{{ asset('asset/vendor/php-email-form/validate.js') }}"></script>
+
+			<script src="{{ asset('asset/js/main.js') }}"></script>
+		</body>
+	</html>

@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menus
+{% endblock %}
+
+{% block body %}
+	<section style="background: #232526">
+		<div class="tab-content text-white d-flex align-items-center flex-column text-start justify-content-between border-bottom">
+			<div class="container-fluid">
+				<div class="container-xxl py-5 mt-5 w-auto">
+					<div class="container">
+						<h1 class="mb-5 text-center text-white fadeInUp">Découvrez nos Menus
+							<span class="text-warning">Antique</span>
+						</h1>
+					</div>
+					<div class="row mb-5 text-center">
+						{% for menu in menus %}
+							<div class="col-md-6">
+								<h2 class="text-warning border-bottom p-4">{{ menu.title }}<span class="text-white">
+										17,50</span>
+									<span class="text-warning">
+										€
+									</span>
+								</h2>
+								<ul class="list-unstyled ">
+									{% for category in menu.categories %}
+										{% for dish in category.dishes %}
+											<li>
+												<p class="text-white">{{ dish.title }}
+												</p>
+											</li>
+										{% endfor %}
+									{% endfor %}
+								</ul>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-content text-white d-flex align-items-center flex-column text-start p-2 pb-0 justify-content-between border-bottom">
+			<div class="container fluid">
+				<h1 class="mb-5 mt-5 text-center text-white">Découvrez notre Carte
+					<span class="text-warning">Antique</span>
+				</h1>
+			</div>
+			<div class="justify-content-center border-bottom p-2">
+				<span class="text-start text-white">
+					{% for categorie in categories %}
+				</span>
+					<h2 class="text-warning justify-content-center border-bottom pb-2">
+						<span>{{ categorie.title }}
+						</span>
+					</h2>
+					<div class="justify-content-center">
+						<ul class="list-unstyled">
+							{% for dishe in categorie.dishes %}
+								<li>
+									<span class="text-start text-white p-2">
+										{{ dishe.title }}
+										<span class="text-start text-warning">:
+											{{ dishe.price }}0
+											<span class="text-white">€
+											</span>
+										</span>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+
+	{% endblock %}
+
+	{% block javascripts %}
+		{{ parent() }}
+		<script>
+			$(document).ready(function () {
+$('.nav-tabs a').click(function () {
+$(this).tab('show');
+});
+});
+		</script>
+	{% endblock %}

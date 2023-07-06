@@ -1,0 +1,75 @@
+<!-- ======= Début Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center ">
+	<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+		<div class="logo me-auto">
+			<h1>
+				<a href="{{path('app_home')}}">Quai Antique</a>
+			</h1>
+		</div>
+		<nav id="navbar" class="navbar order-last order-lg-0">
+
+			<ul>
+				{% if app.user %}
+					{# Si l'utilisateur est connecté #}
+
+					<li>
+						<a class="nav-link scrollto active" href="{{path('app_home')}}">Accueil</a>
+					</li>
+					<li>
+						<a class="nav-link scrollto" href="{{path('app_menus')}}" target="blank">Menus</a>
+					</li>
+
+					<li>
+						<a class="nav-link scrollto" href="{{path('app_home')}}#chefs">Le Chef</a>
+					</li>
+					<li>
+						<a class="nav-link scrollto" href="{{path('app_home')}}#gallery">Galerie</a>
+					</li>
+					<li>
+						<a class="nav-link scrollto" href="{{path('app_home')}}#contact">Contact</a>
+					</li>
+
+					<li>
+						<a class="nav-link scrollto" href="#" target="#">Mon compte</a>
+					</li>
+					<li>
+						<a class="nav-link scrollto" href="{{path('app_logout')}}" target="#">Me déconnecter</a>
+					</li>
+				{% else %}
+					{# Si l'utilisateur n'est pas connecté #}
+					<li>
+						<a class="nav-link scrollto active" href="{{path('app_home')}}">Accueil</a>
+					</li>
+					<li>
+						<a class="nav-link scrollto" href="{{path('app_menus')}}" target="blank">Menus</a>
+					</li>
+
+					<li>
+						<a class="nav-link scrollto" href="{{path('app_home')}}#chefs">Le Chef</a>
+					</li>
+					<li>
+						<a class="nav-link scrollto" href="{{path('app_home')}}#gallery">Galerie</a>
+					</li>
+					<li>
+						<a class="book-a-table-btn scrollto" href="{{path('app_reservation')}}" target="blank">Réserver</a>
+					</li>
+					<li>
+						<a class="nav-link scrollto" href="{{path('app_home')}}#contact">Contact</a>
+					</li>
+					<li>
+						<a class="nav-link scrollto" href="{{path('app_login')}}" target="#">Me connecter</a>
+					</li>
+					<li>
+						<a class="nav-link scrollto" href="{{path('app_register')}}" target="blank">Devenir membre</a>
+					</li>
+				{% endif %}
+
+
+			</div>
+			<i class="bi bi-list mobile-nav-toggle"></i>
+		</nav>
+		{% include '_partials/_flash.html.twig' %}
+	</header>
+
+
+	<!-- Fin Header -->

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes plats
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 15em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+			background-color: yellow;
+		}
+		.example-wrapper code {
+			background-color: brown;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<div class="example-wrapper">
+		<h1>Ma gestion des plats! ✅</h1>
+
+		Message amical de:
+		<ul>
+			<li>Your controller at
+				<code>
+					<a href="{{ 'src/Controller/DishesController.php'|file_link(0) }}">src/Controller/DishesController.php</a>
+				</code>
+			</li>
+			<li>Your template at
+				<code>
+					<a href="{{ 'templates/dishes/index.html.twig'|file_link(0) }}">templates/dishes/index.html.twig</a>
+				</code>
+			</li>
+		</ul>
+
+		<h2>Faisons quelques changements!</h2>
+
+
+	</div>
+{% endblock %}

@@ -1,0 +1,220 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ controller_name }}
+{% endblock %}
+
+{% block body %}
+
+	<!-- ======= Début Hero ======= -->
+	<section id="hero">
+		<div class="hero-container">
+			<div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+				<ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+				<div
+					class="carousel-inner" role="listbox">
+
+					<!-- Slide 1 -->
+					<div class="carousel-item active" style="background-image: url({{ asset('asset/img/slide/slide-1.jpg') }});">
+						<div class="carousel-container">
+							<div class="carousel-content">
+								<h2 class="animate__animated animate__fadeInDown">
+									<span>Quai
+									</span>Antique
+								</h2>
+								<p class="animate__animated animate__fadeInUp">
+									Le Quai Antique est installé à Chambéry et propose au déjeuner comme au dîner une expérience gastronomique, à travers une cuisine sans artifice. Plus encore que ses deux autres restaurants, Arnaud Michant le voit comme une promesse d’un voyage dans son univers culinaire.</p>
+								<div>
+									<a class="btn-menu animate__animated animate__fadeInUp scrollto" href="{{path('app_menus')}}">Nos Menus</a>
+									<a class="btn-book animate__animated animate__fadeInUp scrollto" href="{{path('app_register')}}" target="blank">Devenir Membre Antique
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Slide 2 -->
+					<div class="carousel-item" style="background-image: url({{ asset('asset/img/slide/slide-2.jpg') }});">
+						<div class="carousel-container">
+							<div class="carousel-content">
+								<h2 class="animate__animated animate__fadeInDown">
+									<span>Quai
+									</span>Antique</h2>
+								<p class="animate__animated animate__fadeInUp">
+									Le Quai Antique est installé à Chambéry et propose au déjeuner comme au dîner une expérience gastronomique, à travers une cuisine sans artifice. Plus encore que ses deux autres restaurants, Arnaud Michant le voit comme une promesse d’un voyage dans son univers culinaire.</p>
+								<div>
+									<a class="btn-menu animate__animated animate__fadeInUp scrollto" href="{{path('app_menus')}}" target="blank">Nos Menus</a>
+									<a class="btn-book animate__animated animate__fadeInUp scrollto" href="{{path('app_register')}}" target="blank">Devenir Membre Antique
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+				</a>
+
+				<a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+					<span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+				</a>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- Fin Hero -->
+
+	<main
+		id="main">
+
+		<!-- ======= Pourquoi notre restaurant ======= -->
+		<section id="why-us" class="why-us">
+			<div class="container">
+				<div class="section-title">
+					<h2>Pourquoi notre<span>
+							Restaurant</span>
+					</h2>
+					<p>Venez découvrir les saveurs authentiques de notre cuisine locale dans un cadre chaleureux et
+																																																																																																												accueillant. Nos plats sont préparés avec les ingrédients frais et de qualité pour vous offrir une expérience culinaire inoubliable. Rejoignez-nous pour un repas en famille ou entre amis et
+																																																																																																												laissez-vous tenter par nos délicieux plats. Nous vous attendons avec impatience pour vous faire
+																																																																																																												vivre une expérience culinaire unique!</p>
+				</div>
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="box">
+							<span>01</span>
+							<h4>Notre Tartiflette</h4>
+							<p>Plat traditionnel de la Savoie, composé de pommes de terre, oignons, lardons, reblochon et crème fraîche.</p>
+						</div>
+					</div>
+					<div class="col-lg-4 mt-4 mt-lg-0">
+						<div class="box">
+							<span>02</span>
+							<h4>Notre Raclette</h4>
+							<p>Plat également originaire de la Savoie, fromage fondu servi avec des pommes  de terre, des charcuteries et des légumes.</p>
+						</div>
+					</div>
+					<div class="col-lg-4 mt-4 mt-lg-0">
+						<div class="box">
+							<span>03</span>
+							<h4>Notre Fondue Savoyade</h4>
+							<p>Une fondue de fromage à base de fromages de la région tels que le comté, la beaufort et   le gruyère, accompagnée de pain et de vin blanc.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Fin de "Pourquoi notre restaurant" -->
+
+		<!-- ======= Gallerie ======= -->
+
+		<section id="gallery" class="gallery">
+			<div class="container-fluid">
+				<div class="section-title">
+					<h2>Nos meilleurs plats<span>
+							gourmands</span>
+					</h2>
+				</div>
+				<div class="row g-0">
+					{% for image in images %}
+						<div class="col-lg-3 col-md-4">
+							<div class="gallery-item">
+								<a href="{{ vich_uploader_asset(image, 'imageFile') }}" class="gallery-lightbox">
+									<img src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="{{ vich_uploader_asset(image, 'imageFile') }}" class="img-fluid">
+								</a>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+		<!-- Fin de Gallerie -->
+
+		<!-- ======= Chef ======= -->
+		<section id="chefs" class="chefs">
+			<div class="container">
+				<div class="section-title">
+					<h2>Arnaud Michant
+						<span>Le Chef</span>
+					</h2>
+					<p>Le Chef Arnaud Michant aime passionnément les produits - et producteurs - de la Savoie. C’est pourquoi il a décidé d’ouvrir son troisième restaurant dans ce  déjeuner comme au dîner une expérience gastronomique, à travers une cuisine sans artifice.   Plus encore que ses deux autres restaurants, Arnaud Michant le voit comme une promesse d’un  voyage dans son univers culinaire.</p>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-6">
+						<div class="member">
+							<div class="pic"><img src="{{ asset('asset/img/chefs/chefs-1.jpg') }}" class="img-fluid" alt="Le chef se présente avec son plus beau sourire"></div>
+							<div class="member-info">
+								<h4>Arnaud Michant</h4>
+								<span>Master Chef</span>
+								<div class="social">
+									<a href="#">
+										<i class="bi bi-twitter"></i>
+									</a>
+									<a href="#">
+										<i class="bi bi-facebook"></i>
+									</a>
+									<a href="#">
+										<i class="bi bi-instagram"></i>
+									</a>
+									<a href="#">
+										<i class="bi bi-linkedin"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Chef -->
+
+		<!-- ======= Contact ======= -->
+		<section id="contact" class="contact">
+			<div class="container">
+				<div class="section-title">
+					<h2>
+						<span>Nous</span>
+						Contacter</h2>
+					<p>Pour toutes réservations ou demandes d'informations supplémentaires, veuillez nous contacter directement au numéro de téléphone suivant : +33 xxx xxx xxx. Nous nous ferons un plaisir de vous répondre dans les plus brefs délais.</p>
+				</div>
+			</div>
+			<div class="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d376.90972683362077!2d1.4449657708153902!3d43.60438938168388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1674136839953!5m2!1sfr!2sfr" style="border:0; width: 100%; height: 350px;" allowfullscreen="" loading="lazy"></iframe>
+			</div>
+			<div class="container mt-5">
+				<div class="info-wrap">
+					<div class="row">
+						<div class="col-lg-3 col-md-6 info">
+							<i class="bi bi-geo-alt"></i>
+							<h4>Adresse</h4>
+							<p>Quai Antique<br>2 rue du Mont Blanc      73000 Chambéry, France</p>
+						</div>
+						<div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+							<i class="bi bi-clock"></i>
+							<h4>Nos heures d'ouvertures:</h4>
+							<p>Lundi - Samedi:<br>11:00 - 23:00</p>
+						</div>
+						<div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+							<i class="bi bi-envelope"></i>
+							<h4>Email:</h4>
+							<p>info@example.com<br>contact@example.com</p>
+						</div>
+						<div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+							<i class="bi bi-phone"></i>
+							<h4>Téléphone:</h4>
+							<p>+3360000606<br>+33479001234</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<!-- Fin Contact -->
+	</main>
+	<!-- Fin #main -->
+{% endblock %}

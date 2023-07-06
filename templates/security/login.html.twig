@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion
+{% endblock %}
+
+{% block body %}
+	<section style="background: #232526">
+		<div class="container py-5 mt-3">
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-5 text-center">
+					<h1 class="text-white mb-5">
+						<span class="text-warning">Bienvenue</span>
+						merci de vous
+						<span class="text-warning">connecter</span>
+					</h1>
+					<form method="post">
+						{% if error %}
+							<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+						{% endif %}
+						<div class="mb-3">
+							<label for="inputEmail" class="form-label">
+								<span class="text-warning">Email</span>
+							</label>
+							<input type="email" class="form-control" id="inputEmail" name="email" value="{{ last_username }}" autocomplete="email" required autofocus>
+						</div>
+						<div class="mb-3">
+							<label for="inputPassword" class="form-label">
+								<span class="text-warning">Mot de passe</span>
+							</label>
+							<input type="password" class="form-control" id="inputPassword" name="password" autocomplete="current-password" required>
+						</div>
+						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+						<div class="form-check mb-3">
+							<input class="form-check-input" type="checkbox" name="_remember_me" id="rememberMe">
+							<label class="form-check-label text-white" for="rememberMe">
+								Remember me
+							</label>
+						</div>
+						<button class="btn btn-lg btn-info mt-3" type="submit">Me connecter</button>
+						{% if app.user %}
+							<div class="mt-3">
+								Vous êtes connecté(e) en tant que
+								{{ app.user.userIdentifier }}
+								<a href="{{ path('app_logout') }}" class="text-warning">Me déconnecter</a>
+							</div>
+						{% endif %}
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
