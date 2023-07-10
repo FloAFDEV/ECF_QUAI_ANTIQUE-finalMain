@@ -100,7 +100,7 @@ h6 {
 /*--------------------------------------------------------------
 # Réserver une table button Menu
 --------------------------------------------------------------*/
-.book-a-table-btn {
+/* .book-a-table-btn {
 
   color: #fff;
   border-radius: 50px;
@@ -124,7 +124,7 @@ h6 {
     padding: 8px 20px;
     letter-spacing: 1px;
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -168,11 +168,16 @@ h6 {
   margin-left: 5px;
 }
 
-.navbar a:hover,
+
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
   color: #ffb03b;
+}
+
+.navbar a:hover{
+  color: #ffb03b;
+  transform: scale(1.2);
 }
 
 .navbar .dropdown ul {
