@@ -12,10 +12,10 @@ use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 /**
  * @extends ServiceEntityRepository<User>
  *
- * @method User|null find($id, $lockMode = null, $lockVersion = null)
- * @method User|null findOneBy(array $criteria, array $orderBy = null)
- * @method User[]    findAll()
- * @method User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method User|null find($id, $lockMode = null, $lockVersion = null) // Recherche un utilisateur par son ID
+ * @method User|null findOneBy(array $criteria, array $orderBy = null) // Recherche un utilisateur en fonction de critères spécifiques
+ * @method User[]    findAll() // Récupère tous les utilisateurs de la table
+ * @method User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null) // Récupère des utilisateurs en fonction de critères spécifiques avec ordre, limite et offset
  */
 class UserRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
 {
@@ -81,3 +81,17 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 //        ;
 //    }
 }
+
+
+// Alternative de code en php pur :
+// CREATE TABLE users (
+//     id INT AUTO_INCREMENT PRIMARY KEY,
+//     username VARCHAR(255) NOT NULL,
+//     password VARCHAR(255) NOT NULL,
+//     email VARCHAR(255) NOT NULL,
+//     created_at DATETIME NOT NULL,
+//     updated_at DATETIME NOT NULL
+// );
+
+
+
