@@ -55,15 +55,14 @@ class RegistrationFormType extends AbstractType
                     //     // max length allowed by Symfony for security reasons
                     // ]),
 
-
                     new Regex(
-                        '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/','Votre mot de passe doit contenir au moins 6 caractères, 
-                        une majuscule, une minuscule, un chiffre.'
+                        '/^(?=.[A-Za-z])(?=.\d)(?=.[@$!%#?&])[A-Za-z\d@$!%*#?&]{8,}$/',''
+                    
                     )
                 ],
             ]);
     }
-
+    // /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
