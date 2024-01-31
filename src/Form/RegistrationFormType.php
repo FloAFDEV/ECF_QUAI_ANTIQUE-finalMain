@@ -55,10 +55,10 @@ class RegistrationFormType extends AbstractType
                     //     // max length allowed by Symfony for security reasons
                     // ]),
 
-                    new Regex(
-                       // '/^(?=.[A-Za-z])(?=.\d)(?=.[@$!%#?&])[A-Za-z\d@$!%*#?&]{8,}$/', 'message' =>  'Le mot de passe doit comporter au moins 14 caractères avec 1 majuscule, 1 minuscule, 1chiffre et 1 caractère spécial.'/
-                    
-                    )
+                    new Regex([
+                        'pattern' => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/',
+                        'message' => 'Le mot de passe doit comporter au moins 8 caractères avec au moins 1 majuscule, 1 minuscule, 1 chiffre.',
+                    ]),
                 ],
             ]);
     }
